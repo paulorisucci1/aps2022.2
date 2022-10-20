@@ -3,11 +3,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dialog.component';
 
 @Component({
-  selector: 'user-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  selector: 'user-edicao',
+  templateUrl: './edicao-usuario.component.html',
+  styleUrls: ['./edicao-usuario.component.scss']
 })
-export class CadastroComponent implements OnInit {
+export class EdicaoUsuarioComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
@@ -16,7 +16,7 @@ export class CadastroComponent implements OnInit {
       width: '250px'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result: any) => {
       console.log(result);
     });
   }

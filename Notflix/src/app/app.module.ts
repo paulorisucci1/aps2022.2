@@ -8,19 +8,21 @@ import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastroComponent } from './usuario/cadastro/cadastro.component';
-import { ListagemComponent } from './usuario/listagem/listagem.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserFormDialogComponent } from './usuario/forms/user-form-dialog/user-form-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { EdicaoUsuarioComponent } from './usuario/edicao-usuario/edicao-usuario.component';
+import { ListagemComponent } from './usuario/listagem/listagem.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent,
-    ListagemComponent,
     UserFormDialogComponent,
+    EdicaoUsuarioComponent,
+    ListagemComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
