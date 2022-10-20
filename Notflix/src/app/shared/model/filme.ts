@@ -1,7 +1,9 @@
 export class Filme {
 
-  constructor(private _titulo: string,
+  constructor(
+              private _titulo: string,
               private _dataLancamento: string,
+              private _id: number,
               private _duracao?: number,
               private _descricao?: string) {
   }
@@ -26,6 +28,10 @@ export class Filme {
     this._titulo = value;
   }
 
+  get id(): number{
+    return this._id;
+  }
+
   set duracao(value: number | undefined) {
     this._duracao = value;
   }
@@ -36,5 +42,9 @@ export class Filme {
 
   set descricao(value: string | undefined) {
     this._descricao = value;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 }

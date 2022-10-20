@@ -1,5 +1,6 @@
 import {Filme} from "../model/filme";
 import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -8,15 +9,22 @@ export class FilmeService {
 
   private _filmes : Array<Filme>
 
-  constructor() {
+  URL_FILMES = "http://localhost:3000/filmes"
+
+  constructor(private httpClient: HttpClient) {
     this._filmes = new Array<Filme>();
   }
 
   public cadastrar(filme: Filme) {
-    this._filmes.push(filme);
+    return this.httpClient.post<Filme>(this.URL_FILMES, filme);
   }
 
   public listar() {
-    return this._filmes;
+    return this.httpClient.get<Filme[]>(this.URL_FILMES);
+  }
+
+  public remover(id: number) {
+    console.log(this.URL_FILMES+`/${id}`)
+    return this.httpClient.delete<Filme>(this.URL_FILMES+`/${id}`)
   }
 }

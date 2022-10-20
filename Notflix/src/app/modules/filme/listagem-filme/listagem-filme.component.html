@@ -14,5 +14,10 @@
     <mat-card-content>
       {{filme.descricao}}
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="filmeService.remover(filme.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>

@@ -32,7 +32,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     FormsModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
   ]
 })
 export class FilmeModule { }

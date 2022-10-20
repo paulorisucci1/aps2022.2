@@ -12,14 +12,16 @@ export class CadastroFilmeComponent implements OnInit {
   novoFilme: Filme;
 
   constructor(private filmeService: FilmeService) {
-    this.novoFilme = new Filme('', '');
+    this.novoFilme = new Filme('', '', 1);
   }
 
   ngOnInit(): void {
   }
 
   cadastrarFilme() {
-    this.filmeService.cadastrar(this.novoFilme);
-    this.novoFilme = new Filme('', '');
+    this.filmeService.cadastrar(this.novoFilme).subscribe(
+      usuarioInserido => console.log(usuarioInserido)
+    );
+    this.novoFilme = new Filme('', '', 1);
   }
 }

@@ -11,9 +11,11 @@ export class ListagemFilmeComponent implements OnInit {
 
   filmes: Array<Filme> = [];
 
-  constructor(private filmeService: FilmeService) {}
+  constructor(public filmeService: FilmeService) {}
 
   ngOnInit(): void {
-    this.filmes = this.filmeService.listar();
+    this.filmeService.listar().subscribe(
+      filmes => this.filmes = filmes
+    );
   }
 }
