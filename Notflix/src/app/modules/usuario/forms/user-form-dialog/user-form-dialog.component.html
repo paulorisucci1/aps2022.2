@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{titulo}}</h1>
+<div mat-dialog-content>
+
+  <mat-form-field appearance="fill" class="mat-content-item-margin">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="usuario.nome" placeholder="Digite o nome:" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="mat-content-item-margin">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="usuario.email" placeholder="Digite o email" />
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="cancel()"><mat-icon>close</mat-icon></button>
+  <button mat-raised-button color="primary" cdkFocusInitial (click)="inserirUsuario()">Enviar</button>
+</div>

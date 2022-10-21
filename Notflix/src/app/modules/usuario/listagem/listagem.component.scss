@@ -1,0 +1,30 @@
+.container {
+    padding: 1rem;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header {
+    color: white;
+    background-color: #3f51b5;
+}
+
+.table th {
+    padding: 8px;
+}
+
+.table td {
+    border: 1px solid rgb(236, 236, 236);
+    padding: 8px;
+}
+
+.table td:hover {
+    background-color: #ddd;
+}
+
+.listagem-actions {
+    margin: 0.75rem;
+}
