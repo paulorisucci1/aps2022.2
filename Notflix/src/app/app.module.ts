@@ -1,41 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { UserFormDialogComponent } from './usuario/forms/user-form-dialog/user-form-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table';
-import { EdicaoUsuarioComponent } from './usuario/edicao-usuario/edicao-usuario.component';
-import { ListagemComponent } from './usuario/listagem/listagem.component';
-import { FormsModule } from '@angular/forms';
+import { UsuarioModule } from './modules/usuario/usuario.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MenuComponent } from './layout/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormDialogComponent,
-    EdicaoUsuarioComponent,
-    ListagemComponent,
+    MenuComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     MatIconModule,
-    MatCardModule,
-    MatDialogModule,
-    MatTableModule,
-    FormsModule
+    MatToolbarModule,
+    MatButtonModule,
+    UsuarioModule,
+    LayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
