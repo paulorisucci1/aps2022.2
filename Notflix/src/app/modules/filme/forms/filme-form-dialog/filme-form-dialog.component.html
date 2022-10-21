@@ -1,0 +1,32 @@
+<h1>Inserir Filme</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Título</mat-label>
+    <input [(ngModel)]="novoFilme.titulo" matInput placeholder="Digite o título">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Duração</mat-label>
+    <input [(ngModel)]="novoFilme.duracao" matInput placeholder="Digite a duracao">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Data de lançamento</mat-label>
+    <input [(ngModel)]="novoFilme.dataLancamento" matInput placeholder="Digite a data de lançamento">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+              [(ngModel)]="novoFilme.descricao"></textarea>
+  </mat-form-field>
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button mat-icon-button color="primary" (click)="cadastrarFilme()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" (click)="cancel()"><mat-icon>close</mat-icon></button>
+  </div>

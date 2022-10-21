@@ -11,6 +11,7 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MenuComponent } from './layout/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FilmeModule} from "./modules/filme/filme.module";
 
 
 @NgModule({
@@ -27,8 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatButtonModule,
     UsuarioModule,
-    LayoutModule
-
+    LayoutModule,
+    FilmeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
