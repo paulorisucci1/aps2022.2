@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "nome": "a",
+      "nome": "Paulo Pistolinha",
       "email": "a",
       "id": 1
     },
@@ -9,6 +9,15 @@
       "nome": "Gabriel",
       "email": "1",
       "id": 2
+    }
+  ],
+  "filmes": [
+    {
+      "id": 1,
+      "titulo": "O rei leão",
+      "duracao": 120,
+      "dataLancamento": "09/09/1999",
+      "descricao": "Um leão rei"
     }
   ]
 }

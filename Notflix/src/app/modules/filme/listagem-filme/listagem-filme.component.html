@@ -1,0 +1,24 @@
+<app-cadastro-filme align="end"></app-cadastro-filme>
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign.lt-sm="center">
+  <mat-card *ngFor="let filme of filmes" class="mat-card-listagem-completa" fxFlex="23%">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>movie</mat-icon>
+        {{filme._titulo}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{filme._dataLancamento}}, {{filme._duracao}}min
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{filme._descricao}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="remover(filme)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
