@@ -3,9 +3,9 @@ export class Filme {
   constructor(
               public _titulo: string,
               public _dataLancamento: string,
-              public id: number,
               public _duracao?: number,
-              public _descricao?: string) {
+              public _descricao?: string,
+              public id?: number) {
   }
 
   get titulo(): string {

@@ -13,7 +13,7 @@ export class FilmeFormDialogComponent implements OnInit {
   novoFilme: Filme;
 
   constructor(private filmeService: FilmeService, public dialogRef: MatDialogRef<FilmeFormDialogComponent>) {
-    this.novoFilme = new Filme('', '', 1);
+    this.novoFilme = new Filme('', '');
   }
 
   ngOnInit(): void {
