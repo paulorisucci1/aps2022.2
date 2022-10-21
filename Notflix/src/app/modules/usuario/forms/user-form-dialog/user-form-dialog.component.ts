@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/shared/model/usuario';
-import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { Usuario } from '../../../../shared/model/usuario';
+import { UsuarioService } from '../../../../shared/services/usuario.service';
 import { ListagemUsuarioComponent } from '../../listagem/listagem.component';
 
 @Component({
