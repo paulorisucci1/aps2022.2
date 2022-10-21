@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Usuario } from 'src/app/shared/model/usuario';
-import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { Usuario } from '../../../shared/model/usuario';
+import { UsuarioService } from '../../../shared/services/usuario.service';
 
 @Component({
   selector: 'user-edicao',
@@ -19,7 +19,7 @@ export class EdicaoUsuarioComponent implements OnInit {
     );
   }
 
-  salvarUsuario() 
+  salvarUsuario()
   {
     this.usuarioService.atualizar(this.usuario).subscribe(
       usuarioAlterado => {

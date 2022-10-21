@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/shared/model/usuario';
-import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { Usuario } from '../../../shared/model/usuario';
+import { UsuarioService } from '../../../shared/services/usuario.service';
 import { Router } from '@angular/router';
 import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ListagemUsuarioComponent implements OnInit {
   usuarios: Array<Usuario> = [];
   usuario: Usuario = new Usuario;
-  
+
   constructor(private usuarioService: UsuarioService, private router: Router, public dialog: MatDialog) {}
 
   ngOnInit(): void {
