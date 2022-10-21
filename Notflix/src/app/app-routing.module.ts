@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CriarUsuarioComponent } from './modules/usuario/criar-usuario/criar-usuario.component';
 import { EdicaoUsuarioComponent } from './modules/usuario/edicao-usuario/edicao-usuario.component';
 import { UserFormDialogComponent } from './modules/usuario/forms/user-form-dialog/user-form-dialog.component';
 import { ListagemUsuarioComponent } from './modules/usuario/listagem/listagem.component';
+import {ListagemFilmeComponent} from "./modules/filme/listagem-filme/listagem-filme.component";
+import {CadastroFilmeComponent} from "./modules/filme/cadastro-filme/cadastro-filme.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,14 @@ const routes: Routes = [
   {
     path: 'listarusuarios',
     component: ListagemUsuarioComponent
+  },
+  {
+    path: 'listarfilmes',
+    component: ListagemFilmeComponent
+  },
+  {
+    path: 'cadastrarFilme',
+    component: CadastroFilmeComponent
   }
 ];
 

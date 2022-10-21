@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FilmeService} from "../../../shared/services/filme-service";
-import {Filme} from "../../../shared/model/filme";
+import {MatDialog} from "@angular/material/dialog";
+import {Router} from "@angular/router";
+import {FilmeFormDialogComponent} from "../forms/filme-form-dialog/filme-form-dialog.component";
 
 @Component({
   selector: 'app-cadastro-filme',
@@ -9,19 +10,14 @@ import {Filme} from "../../../shared/model/filme";
 })
 export class CadastroFilmeComponent implements OnInit {
 
-  novoFilme: Filme;
+  constructor(public dialog: MatDialog, private router: Router) { }
 
-  constructor(private filmeService: FilmeService) {
-    this.novoFilme = new Filme('', '', 1);
+  openDialog(): void {
+    this.dialog.open(FilmeFormDialogComponent, {
+      width: '300px'
+    });
   }
 
-  ngOnInit(): void {
-  }
-
-  cadastrarFilme() {
-    this.filmeService.cadastrar(this.novoFilme).subscribe(
-      usuarioInserido => console.log(usuarioInserido)
-    );
-    this.novoFilme = new Filme('', '', 1);
+  ngOnInit(): void{
   }
 }

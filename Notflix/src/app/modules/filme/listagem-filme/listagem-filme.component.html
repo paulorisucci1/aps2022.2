@@ -1,3 +1,4 @@
+<app-cadastro-filme align="end"></app-cadastro-filme>
 <div
   fxLayout="row wrap"
   fxLayoutAlign.lt-sm="center">
@@ -5,17 +6,17 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon>movie</mat-icon>
-        {{filme.titulo}}
+        {{filme._titulo}}
       </mat-card-title>
       <mat-card-subtitle>
-        {{filme.dataLancamento}}, {{filme.duracao}}min
+        {{filme._dataLancamento}}, {{filme._duracao}}min
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      {{filme.descricao}}
+      {{filme._descricao}}
     </mat-card-content>
     <mat-card-actions>
-      <button mat-icon-button (click)="filmeService.remover(filme.id)">
+      <button mat-icon-button (click)="remover(filme)">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-card-actions>

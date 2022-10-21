@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     MenuComponent

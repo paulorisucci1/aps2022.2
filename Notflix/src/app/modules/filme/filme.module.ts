@@ -8,15 +8,18 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
-import { ListagemFilmeComponent } from './listagem-filme/listagem-filme.component';
+import {ListagemFilmeComponent} from './listagem-filme/listagem-filme.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FilmeFormDialogComponent } from './forms/filme-form-dialog/filme-form-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
   declarations: [
     CadastroFilmeComponent,
-    ListagemFilmeComponent
+    ListagemFilmeComponent,
+    FilmeFormDialogComponent
   ],
   exports: [
     CadastroFilmeComponent,
@@ -33,6 +36,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     FlexLayoutModule,
     MatGridListModule,
-  ]
+    MatDialogModule,
+  ],
+  bootstrap: [ListagemFilmeComponent]
 })
 export class FilmeModule { }

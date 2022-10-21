@@ -1,11 +1,11 @@
 export class Filme {
 
   constructor(
-              private _titulo: string,
-              private _dataLancamento: string,
-              private _id: number,
-              private _duracao?: number,
-              private _descricao?: string) {
+              public _titulo: string,
+              public _dataLancamento: string,
+              public _id: number,
+              public _duracao?: number,
+              public _descricao?: string) {
   }
 
   get titulo(): string {

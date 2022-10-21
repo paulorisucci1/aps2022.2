@@ -15,7 +15,16 @@ export class ListagemFilmeComponent implements OnInit {
 
   ngOnInit(): void {
     this.filmeService.listar().subscribe(
-      filmes => this.filmes = filmes
+      filmes => {
+        this.filmes = filmes
+      }
     );
+  }
+
+  remover(filme: Filme): void {
+    const id = Number(filme.id);
+    this.filmeService.remover(id).subscribe(
+      () => this.ngOnInit()
+    )
   }
 }

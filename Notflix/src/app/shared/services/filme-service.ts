@@ -25,6 +25,6 @@ export class FilmeService {
 
   public remover(id: number) {
     console.log(this.URL_FILMES+`/${id}`)
-    return this.httpClient.delete<Filme>(this.URL_FILMES+`/${id}`)
+    return this.httpClient.delete(this.URL_FILMES+`/${id}`)
   }
 }
