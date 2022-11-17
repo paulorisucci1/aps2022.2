@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 import { Usuario } from '../../../shared/model/usuario';
 import { UsuarioService } from '../../../shared/services/usuario.service';
 
@@ -12,8 +13,8 @@ export class EdicaoUsuarioComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioService ,private router: Router, private rota: ActivatedRoute) {
-    const id = Number(this.rota.snapshot.paramMap.get('id'));
+  constructor(private usuarioService: UsuarioFirestoreService ,private router: Router, private rota: ActivatedRoute) {
+    const id = String(this.rota.snapshot.paramMap.get('id'));
     this.usuarioService.buscar(id).subscribe(
       usuarioResponse => this.usuario = usuarioResponse
     );

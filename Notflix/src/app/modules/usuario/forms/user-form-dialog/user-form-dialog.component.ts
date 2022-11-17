@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 import { Usuario } from '../../../../shared/model/usuario';
 import { UsuarioService } from '../../../../shared/services/usuario.service';
 import { ListagemUsuarioComponent } from '../../listagem/listagem.component';
@@ -15,7 +16,7 @@ export class UserFormDialogComponent {
   titulo = 'Adicionar Usuário' ;
   usuario: Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router, public dialogRef: MatDialogRef<UserFormDialogComponent>) {
+  constructor(private usuarioService: UsuarioFirestoreService, private router: Router, public dialogRef: MatDialogRef<UserFormDialogComponent>) {
     this.usuario = new Usuario();
   }
 

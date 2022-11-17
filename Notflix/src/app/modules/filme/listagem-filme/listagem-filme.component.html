@@ -6,14 +6,14 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon>movie</mat-icon>
-        {{filme._titulo}}
+        {{filme.titulo}}
       </mat-card-title>
       <mat-card-subtitle>
-        {{filme._dataLancamento}}, {{filme._duracao}}min
+        {{filme.dataLancamento}}, {{filme.duracao}}min
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      {{filme._descricao}}
+      {{filme.descricao}}
     </mat-card-content>
     <mat-card-actions>
       <button mat-icon-button (click)="remover(filme)">

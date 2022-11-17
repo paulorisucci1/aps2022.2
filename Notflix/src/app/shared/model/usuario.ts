@@ -1,5 +1,12 @@
 export class Usuario {
-    id: number | undefined;
-    nome: string | undefined;
-    email: string | undefined;
+    id?: string;
+    nome?: string;
+    email?: string;
+    
+    constructor(id?: string, usuario: Usuario = {}) {
+      this.id = id;
+      this.email = usuario.email;
+      this.nome = usuario.nome;
+
+    }
 }

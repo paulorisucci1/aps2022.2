@@ -12,6 +12,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MenuComponent } from './layout/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FilmeModule} from "./modules/filme/filme.module";
+import { FirestoreModule } from './firestore/firestore.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {FilmeModule} from "./modules/filme/filme.module";
     MatButtonModule,
     UsuarioModule,
     LayoutModule,
-    FilmeModule
+    FilmeModule,
+    FirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

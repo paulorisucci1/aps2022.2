@@ -4,6 +4,7 @@ import { UsuarioService } from '../../../shared/services/usuario.service';
 import { Router } from '@angular/router';
 import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 
 @Component({
   selector: 'app-listagem',
@@ -14,7 +15,7 @@ export class ListagemUsuarioComponent implements OnInit {
   usuarios: Array<Usuario> = [];
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router, public dialog: MatDialog) {}
+  constructor(private usuarioService: UsuarioFirestoreService, private router: Router, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.usuarioService.listar().subscribe(
@@ -39,7 +40,7 @@ export class ListagemUsuarioComponent implements OnInit {
   }
 
   remover(usuario: Usuario): void {
-    const id = Number(usuario.id);
+    const id = String(usuario.id);
     this.usuarioService.deletar(id).subscribe(
       () => this.ngOnInit()
     );
