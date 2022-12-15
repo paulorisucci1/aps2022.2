@@ -8,17 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuarioModule } from './modules/usuario/usuario.module';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MenuComponent } from './layout/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FilmeModule} from "./modules/filme/filme.module";
 import { FirestoreModule } from './firestore/firestore.module';
+import {LayoutModule} from "./layout/layout.module";
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent
+    AppComponent
   ],
   imports: [
     HttpClientModule,
@@ -31,7 +29,8 @@ import { FirestoreModule } from './firestore/firestore.module';
     UsuarioModule,
     LayoutModule,
     FilmeModule,
-    FirestoreModule
+    FirestoreModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Filme} from "../../../../shared/model/filme";
 import {FilmeService} from "../../../../shared/services/filme-service";
 import {MatDialogRef} from "@angular/material/dialog";
-import { FilmeFirestoreService } from 'src/app/shared/services/filme-firestore.service';
 
 @Component({
   selector: 'app-filme-form-dialog',
@@ -13,7 +12,7 @@ export class FilmeFormDialogComponent implements OnInit {
 
   novoFilme: Filme;
 
-  constructor(private filmeService: FilmeFirestoreService, public dialogRef: MatDialogRef<FilmeFormDialogComponent>) {
+  constructor(private filmeService: FilmeService, public dialogRef: MatDialogRef<FilmeFormDialogComponent>) {
     this.novoFilme = new Filme();
   }
 

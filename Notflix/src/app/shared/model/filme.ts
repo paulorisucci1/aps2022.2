@@ -1,11 +1,11 @@
 export class Filme {
-  id?: string;
+  id?: number;
   dataLancamento?: Date;
   titulo?: string;
   descricao?: string;
   duracao?: number;
 
-  constructor(id?: string, filme: Filme = {}) {
+  constructor(id?: number, filme: Filme = {}) {
     this.id = id;
     this.dataLancamento = filme.dataLancamento;
     this.titulo = filme.titulo;

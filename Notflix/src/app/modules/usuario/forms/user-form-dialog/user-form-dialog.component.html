@@ -3,7 +3,7 @@
 
   <mat-form-field appearance="fill" class="mat-content-item-margin">
     <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="usuario.nome" placeholder="Digite o nome:" />
+    <input matInput [(ngModel)]="usuario.nome" placeholder="Digite o nome" />
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="mat-content-item-margin">
@@ -14,5 +14,5 @@
 </div>
 <div mat-dialog-actions align="end">
   <button mat-raised-button color="accent" (click)="cancel()"><mat-icon>close</mat-icon></button>
-  <button mat-raised-button color="primary" cdkFocusInitial (click)="inserirUsuario()">Enviar</button>
+  <button mat-raised-button color="primary" cdkFocusInitial (click)="inserirOuAlterarUsuario()">Enviar</button>
 </div>

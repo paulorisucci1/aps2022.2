@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dialog.component';
 
 @Component({
@@ -8,16 +7,13 @@ import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dia
   templateUrl: './criar-usuario.component.html',
   styleUrls: ['./criar-usuario.component.scss']
 })
-export class CriarUsuarioComponent implements OnInit {
+export class CriarUsuarioComponent {
 
-  constructor(public dialog: MatDialog, private router: Router) { }
+  constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(UserFormDialogComponent, {
+    this.dialog.open(UserFormDialogComponent, {
       width: '250px'
     });
-  }
-
-  ngOnInit(): void {
   }
 }

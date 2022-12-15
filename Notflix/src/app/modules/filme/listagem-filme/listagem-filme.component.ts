@@ -1,5 +1,4 @@
 import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
-import { FilmeFirestoreService } from 'src/app/shared/services/filme-firestore.service';
 import {Filme} from "../../../shared/model/filme";
 import {FilmeService} from "../../../shared/services/filme-service";
 
@@ -12,7 +11,7 @@ export class ListagemFilmeComponent implements OnInit {
 
   filmes: Array<Filme> = [];
 
-  constructor(public filmeService: FilmeFirestoreService) {}
+  constructor(public filmeService: FilmeService) {}
 
   ngOnInit(): void {
     this.filmeService.listar().subscribe(
@@ -23,7 +22,7 @@ export class ListagemFilmeComponent implements OnInit {
   }
 
   remover(filme: Filme): void {
-    const id = String(filme.id);
+    const id = filme.id;
     this.filmeService.deletar(id).subscribe(
       () => this.ngOnInit()
     )

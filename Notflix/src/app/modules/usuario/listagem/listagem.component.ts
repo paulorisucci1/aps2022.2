@@ -4,7 +4,6 @@ import { UsuarioService } from '../../../shared/services/usuario.service';
 import { Router } from '@angular/router';
 import { UserFormDialogComponent } from '../forms/user-form-dialog/user-form-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 
 @Component({
   selector: 'app-listagem',
@@ -15,7 +14,8 @@ export class ListagemUsuarioComponent implements OnInit {
   usuarios: Array<Usuario> = [];
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioFirestoreService, private router: Router, public dialog: MatDialog) {}
+  constructor(private usuarioService: UsuarioService, private router: Router, public matDialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.usuarioService.listar().subscribe(
@@ -23,24 +23,21 @@ export class ListagemUsuarioComponent implements OnInit {
     )
   }
 
-  openDialog(id: any): void {
-    id = Number(id);
-    this.usuarioService.buscar(id).subscribe(usuarioResponse => this.usuario = usuarioResponse);
-
-    this.dialog.open(UserFormDialogComponent, {
+  cadastrar(): void {
+    this.matDialog.open(UserFormDialogComponent, {
       width: '250px',
-      data: {
-        usuario: this.usuario
-      }
-    });
+    }).afterClosed().subscribe(() => this.ngOnInit());
   }
 
-  editar(usuario: Usuario): void {
-    this.router.navigate(['editarusuario', usuario.id]);
+  atualizar(usuario: Usuario): void {
+    this.matDialog.open(UserFormDialogComponent, {
+      width: '250px',
+      data: usuario
+    }).afterClosed().subscribe(() => this.ngOnInit());
   }
 
   remover(usuario: Usuario): void {
-    const id = String(usuario.id);
+    const id = Number(usuario.id);
     this.usuarioService.deletar(id).subscribe(
       () => this.ngOnInit()
     );

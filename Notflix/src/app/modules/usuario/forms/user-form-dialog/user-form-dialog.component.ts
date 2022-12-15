@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 import { Usuario } from '../../../../shared/model/usuario';
-import { UsuarioService } from '../../../../shared/services/usuario.service';
-import { ListagemUsuarioComponent } from '../../listagem/listagem.component';
+import {UsuarioService} from "../../../../shared/services/usuario.service";
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -13,15 +11,22 @@ import { ListagemUsuarioComponent } from '../../listagem/listagem.component';
 })
 export class UserFormDialogComponent {
 
-  titulo = 'Adicionar Usuário' ;
-  usuario: Usuario;
+  public titulo = 'Adicionar Usuário';
+  public usuario = new Usuario(undefined, {email: '', nome: ''});
 
-  constructor(private usuarioService: UsuarioFirestoreService, private router: Router, public dialogRef: MatDialogRef<UserFormDialogComponent>) {
-    this.usuario = new Usuario();
+  constructor(private usuarioService: UsuarioService, private router: Router, public dialogRef: MatDialogRef<UserFormDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) data: Usuario) {
+    if (data) {
+      this.usuario = data;
+    }
   }
 
-  inserirUsuario(): void {
-    this.usuarioService.adicionar(this.usuario).subscribe(() => {this.dialogRef.close(); window.location.reload()});
+  inserirOuAlterarUsuario(): void {
+    if(!this.usuario.id) {
+      this.usuarioService.adicionar(this.usuario).subscribe(() => {this.dialogRef.close();});
+    } else {
+      this.usuarioService.atualizar(this.usuario).subscribe(() => {this.dialogRef.close();})
+    }
   }
 
   cancel(): void {
