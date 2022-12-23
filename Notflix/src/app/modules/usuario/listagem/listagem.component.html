@@ -18,7 +18,14 @@
                     <td>{{usuario.id}}</td>
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.email}}</td>
-                    <td align="center"><button mat-raised-button color="primary" (click)="atualizar(usuario)" class="listagem-actions"><mat-icon>edit</mat-icon></button> <button mat-raised-button color="warn" (click)="remover(usuario)"><mat-icon>delete</mat-icon></button></td>
+                    <td align="center">
+                      <button mat-raised-button color="primary" (click)="atualizar(usuario)" class="listagem-actions">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-raised-button color="warn" (click)="remover(usuario)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

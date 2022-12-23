@@ -1,4 +1,7 @@
-<app-cadastro-filme align="end"></app-cadastro-filme>
+<mat-card align="end">
+  <button mat-raised-button color="primary" (click)="cadastrar()"><mat-icon>add</mat-icon></button>
+</mat-card>
+
 <div
   fxLayout="row wrap"
   fxLayoutAlign.lt-sm="center">
@@ -16,7 +19,10 @@
       {{filme.descricao}}
     </mat-card-content>
     <mat-card-actions>
-      <button mat-icon-button (click)="remover(filme)">
+      <button mat-raised-button color="primary" (click)="atualizar(filme)" class="listagem-actions">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-raised-button (click)="remover(filme)" color="warn">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-card-actions>

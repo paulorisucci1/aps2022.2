@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Filme} from "../../../../shared/model/filme";
 import {FilmeService} from "../../../../shared/services/filme-service";
-import {MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-filme-form-dialog',
@@ -10,18 +10,24 @@ import {MatDialogRef} from "@angular/material/dialog";
 })
 export class FilmeFormDialogComponent implements OnInit {
 
-  novoFilme: Filme;
+  filme = new Filme();
 
-  constructor(private filmeService: FilmeService, public dialogRef: MatDialogRef<FilmeFormDialogComponent>) {
-    this.novoFilme = new Filme();
+  constructor(private filmeService: FilmeService, public dialogRef: MatDialogRef<FilmeFormDialogComponent>, @Inject(MAT_DIALOG_DATA) data:Filme) {
+    if(data) {
+      this.filme = data;
+    }
+
   }
 
   ngOnInit(): void {
   }
 
-  cadastrarFilme() {
-    this.filmeService.adicionar(this.novoFilme).subscribe(
-      () => {this.dialogRef.close(); window.location.reload()});
+  cadastrarFilme(): void {
+    if(!this.filme.id) {
+      this.filmeService.adicionar(this.filme).subscribe(() => this.dialogRef.close());
+    } else {
+      this.filmeService.atualizar(this.filme).subscribe(() => this.dialogRef.close());
+    }
   }
 
   cancel(): void {

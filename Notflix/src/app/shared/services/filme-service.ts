@@ -24,6 +24,10 @@ export class FilmeService {
     return this.httpClient.get<Filme[]>(this.URL_FILMES);
   }
 
+  public atualizar(filme: Filme) {
+    return this.httpClient.put(this.URL_FILMES+`/${filme.id}`, filme);
+  }
+
   public deletar(id: number | undefined) {
     console.log(this.URL_FILMES+`/${id}`)
     return this.httpClient.delete(this.URL_FILMES+`/${id}`)

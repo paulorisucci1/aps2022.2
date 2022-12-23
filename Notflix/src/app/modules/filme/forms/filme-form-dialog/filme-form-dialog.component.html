@@ -1,17 +1,17 @@
 <h1>Inserir Filme</h1>
   <mat-form-field appearance="fill">
     <mat-label>Título</mat-label>
-    <input [(ngModel)]="novoFilme.titulo" matInput placeholder="Digite o título">
+    <input [(ngModel)]="filme.titulo" matInput placeholder="Digite o título">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Duração</mat-label>
-    <input [(ngModel)]="novoFilme.duracao" matInput placeholder="Digite a duracao">
+    <input [(ngModel)]="filme.duracao" matInput placeholder="Digite a duracao">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Data de lançamento</mat-label>
-    <input [(ngModel)]="novoFilme.dataLancamento" matInput placeholder="Formato: YYYY-MM-dd">
+    <input [(ngModel)]="filme.dataLancamento" matInput placeholder="Formato: YYYY-MM-dd">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -21,10 +21,15 @@
               #autosize="cdkTextareaAutosize"
               cdkAutosizeMinRows="1"
               cdkAutosizeMaxRows="5"
-              [(ngModel)]="novoFilme.descricao"></textarea>
+              [(ngModel)]="filme.descricao"></textarea>
   </mat-form-field>
 
-  <div mat-dialog-actions align="end">
+<!--  <mat-form-field appearance="fill">-->
+<!--    <mat-label>Imagem</mat-label>-->
+<!--    <input [(ngModel)]="filme.urlImagem" matInput placeholder="URL da imagem">-->
+<!--  </mat-form-field>-->
+
+<div mat-dialog-actions align="end">
     <button mat-raised-button mat-icon-button color="primary" (click)="cadastrarFilme()">
       <mat-icon>add</mat-icon>
     </button>

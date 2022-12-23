@@ -4,6 +4,7 @@ export class Filme {
   titulo?: string;
   descricao?: string;
   duracao?: number;
+  urlImagem?: string;
 
   constructor(id?: number, filme: Filme = {}) {
     this.id = id;
@@ -11,6 +12,6 @@ export class Filme {
     this.titulo = filme.titulo;
     this.descricao = filme.descricao;
     this.duracao = filme.duracao;
-
+    this.urlImagem = filme.urlImagem;
   }
 }
